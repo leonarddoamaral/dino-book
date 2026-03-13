@@ -26,7 +26,8 @@ public abstract class Dinossaur {
     @Enumerated(EnumType.STRING)
     private Periodos periodo;
 
-    private String dieta;
+    @Enumerated(EnumType.STRING)
+    private Dieta dieta;
 
     @Column(name = "tipo", insertable = false, updatable = false)
     private String tipo;

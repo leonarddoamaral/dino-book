@@ -7,12 +7,11 @@ import com.example.demo.sauropode.Sauropode;
 import com.example.demo.teropode.Teropode;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.text.TabExpander;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -41,5 +40,9 @@ public class DinossaurControler {
     public List<DadosListagemDino>listar(){
         return repository.findAll().stream().map(DadosListagemDino::new).toList();
     }
-
+    @GetMapping("/{id}")
+    @Transactional
+    public List<DadosListagemDino>ListaUnica(@PathVariable Long id){
+        return repository.findAllById(Collections.singleton(id)).stream().map(DadosListagemDino::new).toList();
+    }
 }

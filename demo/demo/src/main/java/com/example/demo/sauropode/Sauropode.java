@@ -1,10 +1,11 @@
 package com.example.demo.sauropode;
 
+
 import com.example.demo.controler.DadosCadastroDino;
 import com.example.demo.dinossaur.Dinossaur;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.example.demo.dinossaur.Dieta;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,7 +18,7 @@ import lombok.Setter;
 public class Sauropode extends Dinossaur {
     public Sauropode(DadosCadastroDino dados) {
         super(dados);
-        this.setDieta("Herbivorous");
+        this.setDieta(Dieta.Herbivorous);
     }
 
     @Override
