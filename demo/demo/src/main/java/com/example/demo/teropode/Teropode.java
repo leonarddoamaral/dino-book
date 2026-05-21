@@ -25,4 +25,15 @@ public class Teropode extends Dinossaur {
         Double qtd = (0.15*peso);
         return qtd;
     }
+    @Override
+    public Integer QtdChifres(Integer chifres, String nome){
+        String dinoName = nome.toLowerCase();
+        if (dinoName.equals("carnotauro") || dinoName.equals("ceratossauro")){
+            return chifres;
+        }
+        else{
+            return 0;
+        }
+
+    }
 }

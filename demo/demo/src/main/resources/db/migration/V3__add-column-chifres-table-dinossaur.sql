@@ -1,0 +1,1 @@
+ALTER TABLE dinossaur ADD COLUMN quantidade_chifres INT NULL;

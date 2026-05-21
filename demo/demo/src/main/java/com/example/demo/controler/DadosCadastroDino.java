@@ -12,7 +12,9 @@ public record DadosCadastroDino(
         @NotNull
         Periodos periodo,
         @NotBlank
-        String tipo
+        String tipo,
+        Integer chifres
+
 ) {
 
 }

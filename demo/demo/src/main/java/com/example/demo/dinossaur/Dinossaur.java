@@ -16,7 +16,8 @@ import lombok.Setter;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
 public abstract class Dinossaur {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
@@ -32,18 +33,30 @@ public abstract class Dinossaur {
     @Column(name = "tipo", insertable = false, updatable = false)
     private String tipo;
 
+    private Integer chifres;
 
-    public Dinossaur(DadosCadastroDino dados){
-        this.nome =dados.nome();
+
+    public Dinossaur(DadosCadastroDino dados) {
+        this.nome = dados.nome();
         this.peso = dados.peso();
         this.periodo = dados.periodo();
         this.tipo = dados.tipo();
+        this.chifres = dados.chifres();
+
+
 
     }
 
-    public Double QtdAlimentoDiaria(Double peso){
+    public Double QtdAlimentoDiaria(Double peso) {
         return 0.0;
     }
+    public Integer QtdChifres(Integer chifres, String nome){
+       return 0;
+
+    }
+
 }
+
+
 
 

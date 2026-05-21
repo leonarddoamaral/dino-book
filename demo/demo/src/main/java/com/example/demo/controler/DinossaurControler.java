@@ -1,6 +1,8 @@
 package com.example.demo.controler;
 
 
+import com.example.demo.anquilossaurideo.Anquilossaurideo;
+import com.example.demo.ceratopsideo.Ceratopsideo;
 import com.example.demo.dinossaur.Dinossaur;
 import com.example.demo.dinossaur.DinossaurRepository;
 import com.example.demo.sauropode.Sauropode;
@@ -29,8 +31,12 @@ public class DinossaurControler {
         }
          else if("teropode".equalsIgnoreCase(dados.tipo())){
             dino = new Teropode(dados);
-        }
-         else{
+        } else if ("ceratopsideo".equalsIgnoreCase(dados.tipo())) {
+             dino = new Ceratopsideo(dados);
+
+        } else if ("anquilossaurideo".equalsIgnoreCase(dados.tipo())) {
+            dino = new Anquilossaurideo(dados);
+        } else {
             throw new RuntimeException("Tipo de dinossauro desconhecido: " + dados.tipo());
         }
 
